@@ -200,6 +200,7 @@ ul .button{
 ul .button p {
     height: 10px;
     font-weight: 300;
+    text-align: center;
 }
 ul .button a {
     display: block;
