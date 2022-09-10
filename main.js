@@ -59,7 +59,7 @@ var tetrominos = [{
 
 var Tetris = function(x,y,width,height){
     this.posX = x || 10;
-    this.posY = y || -363;
+    this.posY = y || -330;
 
     this.width  = width || window.innerWidth;
     this.height = height || window.innerHeight;
