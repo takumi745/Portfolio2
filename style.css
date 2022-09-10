@@ -1,0 +1,499 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
+/* -------------------- 全体 ------------------------ */
+body {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* --------------- メイン ---------------- */
+/* ----- 背景用の動画ファイル ----- */
+#bg-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url('poster.jpg') no-repeat;
+    background-size: cover;
+}
+/* ----- 背景の上に表示させたいコンテンツ ----- */
+.header-title{
+    position: relative; /*必ず必要*/
+    z-index: 2; /*必ず必要*/
+    /* display: flex; */
+    width: 0;
+    margin: auto;
+}
+.title {
+    position: absolute;
+    width: 0;
+	margin: 0;
+    top: 150px;
+    left: 600px;
+	font-size: 3vw;
+	font-weight: bold;
+	color: 	#333333;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: flowing-anim 2s forwards linear;
+    z-index: 100;
+} 
+.title h1 {
+    width: 0;
+    margin: 0;
+}
+.title h2 {
+    width: 0;
+    margin: 0;
+}
+.btn {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.btn button {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'Staatliches', cursive;
+	letter-spacing: 5px;
+	background: #ffc421;
+	border: 2px solid black;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+	transition: 500ms;
+}
+.btn button a {
+    color: black;
+}
+
+.btn button:after {
+	content: '';
+	position: absolute;
+	transform: translateX(-55px) translateY(-40px);
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: transparent;
+	box-shadow: 0px 0px 50px transparent;
+	transition: 500ms;
+}
+
+.btn button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 10px 10px rgba(0,0,0,0.4);
+}
+
+.btn button:hover:after {
+	background: white;
+	box-shadow: 0px 0px 20px #ffc421, 0px 0px 30px #ffc421, inset 0px 0px 10px #ffc421;
+	animation: spin 1s infinite linear;
+}
+
+@keyframes spin{
+	25%{transform: translateX(-25px) translateY(-35px);
+			width: 15px;
+			height: 15px;}
+	50% {transform: translateX(-55px) translateY(-30px);
+			width: 5px;
+			height: 5px;}
+	75% {transform: translateX(-85px) translateY(-35px);
+			width: 15px;
+			height: 15px;}
+}
+
+.btn button:focus {
+	outline: none;
+}
+
+/*--------------- アニメーション ---------------*/
+@keyframes flowing-anim {
+    0%{
+        width: 0;
+    }
+   100%{
+        width: 700px;
+    }
+}
+
+/* -------------------------- main.html -------------------------- */
+/* header */
+.continer {
+    padding-top: 30px;
+    background: #141414;
+    overflow: hidden;
+    height: 190px;
+}
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 130px;
+}
+.navigation{
+    /* flexboxで要素を真ん中に指定 */
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+}
+.navigation ul {
+    width: 100%;
+    margin-left: 100px;
+    z-index: 5;
+}
+ul .button{
+    display: block;
+    padding:10px;
+    background:white;
+    width:20%;
+    float:left;
+    /* 上下にボーダーを指定 */
+    border-top: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+    /* カーソルを離した際のアニメーションの速度調整 */
+    transition:.2s all;  
+}
+ul .button p {
+    height: 10px;
+    font-weight: 300;
+}
+ul .button a {
+    display: block;
+    color:#333333;
+    /* リンク指定した要素のスタイルを削除 */
+    text-decoration:none;
+}
+.navigation ul li {
+    padding-bottom: 20px;
+}
+.navigation:hover .button{
+    /* ナビゲーションをマウスオーバーした際のアニメーションの動きを指定 */
+    filter:blur(3px);
+    /* 全てのボタンがぼやける */
+    opacity:.8;
+    /* 全てのボタンを通常サイズに指定 */
+    transform: scale(1);
+}
+.navigation:hover .button:hover{
+    /* アニメーション速度を指定 */
+    transition: .6s;
+    /* hoverしたボタンを少し拡大するように指定 */
+    transform:scale(1.1);
+    /* hoverしている要素のみぼやけない指定 */
+    filter:blur(0px);
+    opacity:1;
+    /* ボタンをhoverした際に上下のボーダーの色を濃くする */
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+}
+.navigation:hover .button:hover > p {
+    font-weight: bold;
+}
+
+/*------------- main ------------*/
+#main {
+    margin-top: 100px;
+}
+#main .profile .profile_title {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#main .profile .profile_title img {
+    width: 80px;
+    margin-right: 15px;
+}
+#main .profile .profile_title h2 {
+    font-size: 60px;
+}
+#main .profile .profile_text {
+    display: flex;
+    margin: 50px auto 200px auto;
+    justify-content: center;
+
+}
+#main .profile .profile_text .text-image {
+    width: 200px;
+    height: 200px;
+    margin-right: 15px;
+}
+#main .profile .profile_text .da-grid {
+    margin-top: 30px;
+    padding-right: 50px;
+}
+#main .profile .profile_text .text-position {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+#main .profile .profile_text .text {
+    width: 70%;
+}
+#main .profile .profile_text .text h3 {
+    font-size: 30px;
+}
+#main .profile .profile_text .text p {
+    margin: 15px 0 50px;
+}
+#main .profile .icon-list {
+    display: flex;
+	flex-wrap: wrap;
+    margin: 15px 0 50px;
+}
+#main .profile .icon-list .icon {
+    padding-left: 15px;
+}
+#main .profile .icon-list img {
+    height: 60px
+}
+
+/* ----------- works ----------- */
+#main .works {
+    margin-bottom: 200px;
+}
+#main .works .profile_title {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#main .works .profile_title img {
+    width: 80px;
+    margin-right: 20px;
+}
+#main .works .profile_title h2 {
+    font-size: 60px;
+}
+.pic-ctn {
+    width: 100vw;
+    height: 200px;
+}
+  
+@keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+}
+  
+.pic-ctn {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 100px 0 30px 0;
+}
+  
+.pic-ctn > img {
+    position: absolute;
+    top: 0;
+    left: calc(36% - 100px);
+    opacity: 0;
+    width: 700px;
+    animation: display 10s infinite;
+}
+  
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+
+/* grid */
+.grid-position .grid-title {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.grid-position .grid-title h3 {
+    font-size: 30px;
+}
+.grid {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.grid .item {
+    box-shadow: 0px 0px 8px 4px #ccc;
+}
+.grid .item img {
+    max-width: 100%;
+
+}
+/* ------------------------
+animate
+------------------------ */
+.animate {
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+}
+
+.animate.slide-from-buttom {
+    transform: translateY(40px);
+}
+
+.animate.appear {
+    opacity: 1;
+    transform: none;
+}
+.wrapper {
+    padding: 250px 40px 0 40px;
+}
+.wrapper2 {
+    padding: 0 40px;
+}
+.wrapper3 {
+    padding: 0 40px;
+}
+
+/* ------- Web Applications --------- */
+.wa {
+    margin-top: 200px;
+}
+.wa .wa-title {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.wa .wa-title h3 {
+    font-size: 30px;
+}
+.wa .production {
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.wa .production .production-title {
+    margin: 100px auto 25px auto;
+    justify-content: center;
+    text-align: center;
+}
+.wa .production .production-text {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.wa .production .production-text p + p {
+    margin-top: 15px;
+}
+.wa .production .production-text p a {
+    color: #141414;
+}
+.wa .production .production-text p a:hover {
+    opacity: 0.5;
+}
+
+/* ------- Data analysis, etc. -------- */
+.da {
+    margin-top: 200px;
+}
+.da .da-title {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.da .da-title h3 {
+    font-size: 30px;
+}
+.da-text {
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.da-text .results-title {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.da-text .kaggle, .signate, .nishika {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.da-text .kaggle {
+    margin-top: 50px;
+}
+.da-text .signate {
+    margin-top: 50px;
+}
+.da-text .nishika {
+    margin-top: 50px;
+}
+.da-text .struggled {
+    margin-top: 100px;
+}
+.da-text .struggled h3 {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('a[href^="#"]').click(function(){
+            var speed = 500;
+            var href= $(this).attr("href");
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            var position = target.offset().top;
+            $("html, body").animate({scrollTop:position}, speed, "swing");
+            return false;
+            });
+        });
+    </script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="continer"> 
+        <canvas></canvas>
+        <div class="navigation">
+            <!-- 階層に分けてナビゲーションの骨組みを作成 -->
+            <ul>
+              <li class="button">
+                <p><a href="header.html">Home</a></p>
+              </li>
+              <li class="button">
+                <p><a href="#profile">Profile</a></p>
+              </li>
+              <li class="button">
+                <p><a href="#works">Works</a></p>
+              </li>
+              <li class="button">
+                <p><a href="#">blog</a></p>
+              </li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="profile" class="profile">
+            <div class="profile_title">
+                <img src="img/ギャングのアイコン.png" alt="アイコン画像">
+                <h2>Profile & Data analysis, etc.</h2>
+            </div>
+            <div class="profile_text wrapper3">
+                <img class="text-image" src="img/portfolio_image.png" alt="アイコン画像">
+                <div class="text-position">
+                    <div class="text">
+                        <h3>自己紹介</h3>
+                        <p>
+                            初めまして。私は左座琢己(<a href="https://github.com/takumi745">@takumi745</a>)と申します。<br>
+                            中学生の時からプログラミングに興味がありゲーム作りを学べる専門学校に行き、今はWeb系やAIの勉強をしています。<br>
+                            今までで学んできた言語は、専門学生の時にC言語,C#,C++,Javaを学び、社会人になってからはHTML,CSS,JavaScript,PHP,MySQL,Pythonを勉強しており、特にPythonに力を入れています。<br>
+                        </p>
+                        <h3>勉強してきた技術 & ソフトウェア</h3>
+                        <ul class="icon-list">
+                            <li class="icon1"><img src="img/html-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/php_PNG34.png" alt=""></li>
+                            <li class="icon"><img src="img/laravel-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/mysql-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/C++-log.png" alt=""></li>
+                            <li class="icon"><img src="img/C-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/python-logo.jpeg" alt=""></li>
+                            <li class="icon"><img src="img/jquery-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/docker_logo.png" alt=""></li>
+                            <li class="icon"><img src="img/github-logo.png" alt=""></li>
+                            <li class="icon"><img src="img/unity-logo.png" alt=""></li>
+                        </ul>
+                        <h3>コンペサイトのマイページ</h3>
+                        <div class="grid da-grid">
+                            <div class="item">
+                                <a href="https://www.kaggle.com/zouzatakumi"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 17.14.47.png" alt="feature画像"></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://signate.jp/profile"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 17.15.29.png" alt="feature画像"></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://profile.nishika.com/dashboard"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 17.18.22.png" alt="feature画像"></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://comp.probspace.com/users/shiro02/0"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 17.19.25.png" alt="feature画像"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="da-text">
+                        <div class="results">
+                            <div class="results-title">
+                                <h3>主なコンペの成績</h3>
+                            </div>
+                            <div class="kaggle">
+                                <h4>Kaggle</h4>
+                                <p>Patient Survival Prediction　６位</p>
+                                <p>Indian Railways Challenge　11位</p>
+                                <p>CSE/STAT 416 22su - HW4　2位</p>
+                            </div>
+                            <div class="signate">
+                                <h4>SIGNATE</h4>
+                                <p>【第23回_Tier限定コンペ】採血データを使った心不全予測 32位</p>
+                            </div>
+                            <div class="nishika">
+                                <h4>Nishika</h4>
+                                <p>【トレーニングコンペ】中古マンション価格予測 239位</p>
+                            </div>
+                        </div>
+                        <div class="struggled">
+                            <h3>データ分析コンペで工夫した点・苦戦した点</h3>
+                            <p>
+                                工夫した点は、分析するデータ一つ一つで、アプローチの仕方を変えていかないと、なかなか精度が上がらず順位も伸びないというのが僕が取り組んでいる中で感じました。
+                                なので、まずこのコンペではどういったデータを扱っているか、そして何に対しての予測値を出すのかというのを徹底的に調べることに大半の時間を費やすことにしました。
+                                そうすることで、自然とアプローチの仕方も見えてくるしどのモジュールを使って学習させるのが一番精度が出るのかというのがある程度見えてくるようになりました。
+                                そして、自分の中での最高の精度が出てからは、コンペに参加している人が公開しているさまざまなコードを参考に考え方や、パラメータの調整の仕方などを取り入れて
+                                さらに精度を上げるために工夫しました。
+                                苦戦した点は、予測値を出す前の下準備がとても大変でした。例えば、欠損値があるデータに対してどのように欠損値を処理するかとか、データのカラムがオブジェクト型が
+                                合った場合は、どのように数値に変換するのかとアプローチの仕方がたくさんあるので一番適している処理の仕方にたどり着くのに苦戦しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="works" class="works">
+            <div class="profile_title">
+                <img src="img/プログラムアイコン.png" alt="アイコン画像">
+                <h2>Works</h2>
+            </div>
+            <div class="pic-ctn">
+                <img src="img/スクリーンショット 2022-08-24 15.57.14.png" alt="" class="pic">
+                <img src="img/スクリーンショット 2022-08-23 15.36.26.png" alt="" class="pic">
+                <img src="img/スクリーンショット 2022-08-24 15.46.46.png" alt="" class="pic">
+                <img src="img/スクリーンショット 2022-08-24 15.47.03.png" alt="" class="pic">
+                <img src="img/スクリーンショット 2022-08-24 15.44.34.png" alt="" class="pic">
+            </div>
+            <div class="wrapper  grid-position">
+                <div class="grid-title">
+                    <h3>Web site</h3>
+                </div>
+                <div class="grid">
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 15.36.45.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-23 15.36.26.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-23 15.33.30.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-23 15.32.31.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-23 15.31.42.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-21 17.05.11.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-21 17.04.46.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-21 17.04.11.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-21 17.03.32.png" alt="feature画像"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper2 wa">
+                <div class="wa-title">
+                    <h3>Web Applications & Website Components</h3>
+                </div>
+                <div class="grid">
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 16.14.29.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 16.14.44.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 16.15.12.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href=""><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-24 16.15.38.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href="https://github.com/takumi745/Todolist"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-08-26 16.09.33.png" alt="feature画像"></a>
+                    </div>
+                    <div class="item">
+                        <a href="https://github.com/takumi745/TwitterClone"><img class="animate slide-from-buttom" src="img/スクリーンショット 2022-09-07 12.46.01.png" alt="feature画像"></a>
+                    </div>
+                </div>
+                <div class="production">
+                    <div class="production-title">
+                        <h3>主な制作物</h3>
+                    </div>
+                    <div class="production-text">
+                        <p><a href="http://153.126.154.166/TwitterClone">TwitterClone (機能追加中)</a></p>
+                        <p>TdoList</p>
+                        <p>ゴルフスイング分析アプリ (作成中)</p>
+                        <p>スケージュール管理アプリ（作成中）</p>
+                        <p>マルチログイン機能がついたWebsite</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="main.js"></script>
+</html>
