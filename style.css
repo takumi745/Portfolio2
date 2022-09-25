@@ -254,10 +254,13 @@ ul .button a {
     font-size: 60px;
 }
 #main .profile .profile_text {
-    display: flex;
     margin: 50px auto 200px auto;
     justify-content: center;
-
+}
+#main .profile .profile_text .profile_text_image {
+    display: flex;
+    width: 800px;
+    margin-bottom: 50px;
 }
 #main .profile .profile_text .text-image {
     width: 200px;
@@ -273,6 +276,15 @@ ul .button a {
     margin: 0 auto;
     justify-content: space-between;
 }
+#main .profile .profile_text .profile_text_image div {
+    /* width: 600px; */
+}
+#main .profile .profile_text .me {
+    font-size: 30px;
+}
+#main .profile .profile_text .profile_text_image p {
+    margin-top: 15px;
+}
 #main .profile .profile_text .text {
     width: 70%;
 }
@@ -285,7 +297,7 @@ ul .button a {
 #main .profile .icon-list {
     display: flex;
 	flex-wrap: wrap;
-    margin: 15px 0 50px;
+    margin: 15px 0 50px 0;
 }
 #main .profile .icon-list .icon {
     padding-left: 15px;
@@ -408,13 +420,13 @@ animate
     transform: none;
 }
 .wrapper {
-    padding: 250px 40px 0 40px;
+    padding: 250px 40px 0 80px;
 }
 .wrapper2 {
-    padding: 0 40px;
+    padding: 0 80px;
 }
 .wrapper3 {
-    padding: 0 40px;
+    padding: 0 80px;
 }
 
 /* ------- Web Applications --------- */
